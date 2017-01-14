@@ -196,22 +196,27 @@ a:visited {
     text-align: center;
 }
 
-.socials-icons i {
+.icon {
     transition: 0.2s;
+    padding: 0px 10px 0px 10px;
 }
 
-.socials-icons i:hover {
+.icon:hover {
     margin: auto 15px;
     padding: auto 5px;
     transform: scale(1.75);
 }
 
-.socials-icons #gmail:hover {
-    margin: auto 18px !important;
+.icon #gmail {
+    /*margin-right: 10px;*/
 }
 
 .icon {
     display: inline-block;
+}
+
+#icon-right {
+    padding-left: 5px;
 }
 
 
