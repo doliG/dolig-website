@@ -10,13 +10,15 @@
 	<link rel="stylesheet" href="css/terminal.css">
 	<link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Source+Sans+Pro" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/show-hide-terminal.js"></script>
 	<script src="https://use.fontawesome.com/13a64c4418.js"></script>
 
 </head>
 
 <body>
 
-	<header class="animated fadeInDown hidden">
+	<header class="animated fadeInDown">
 		<div class="flip-container">
 			<div class="flipper">
 				<div class="front">
@@ -30,7 +32,7 @@
 		<h1>doliG</h1>
 	</header>
 
-	<section class="container animated fadeIn hidden">
+	<section class="container animated fadeIn" id="content">
 		<h1>Hey you! Welcome here.</h1>
 		<h3>I'm doliG. Just call me dol.</h3><br>
 		<p> I'll be soon a web-developper. I do not even know if I will be full stack, front or back-end, but be sure I'll be polyvalent.</p>
@@ -67,7 +69,7 @@
 		</div>
 	</section>
 
-	<section class="terminal">
+	<section class="terminal hidden" id="terminal">
 		<div class="terminal-top-bar">
 			<div id="close-button"></div>
 			<div id="minimize-button"></div>
@@ -76,7 +78,7 @@
 		</div>
 		<div class="terminal-content">
 			<label for="command">user@dolig.xyz $ </label>
-			<input type="text" name="command" value=""></input>
+			<input type="text" name="command" value="" id="command"></input>
 		</div>
 	</section>
 
