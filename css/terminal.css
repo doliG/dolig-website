@@ -1,0 +1,69 @@
+.terminal {
+    background-color: white;
+    width: 600px;
+    padding: 0px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.terminal-top-bar {
+    background-color: #E0DEE1;
+    margin: 0px;
+    padding: 3px;
+    border-radius: 5px 5px 0px 0px;
+    border: 1px solid #C0C0C0;
+}
+
+#terminal-title {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    width: 479px;
+}
+
+#close-button, #minimize-button, #maximize-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+#close-button {
+    background-color: #FD5F5C;
+}
+
+#minimize-button {
+    background-color: #FDBB40;
+}
+
+#maximize-button {
+    background-color: #34CA47;
+}
+
+.terminal-content {
+    height: 300px;
+    padding: 3px;
+    border: 1px solid #C0C0C0;
+    border-top: none;
+    background-color: black;
+    border-radius: 0pc 0px 5px 5px;
+    color: white;
+    font-family: 'Overpass Mono', monospace;
+}
+
+.terminal-content input {
+    background-color: black;
+    color: white;
+    border: none;
+    outline: 0;
+    font-family: 'Overpass Mono', monospace;
+}
+
+/* Dev */
+
+.hidden {
+    display: none;
+}
