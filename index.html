@@ -10,9 +10,13 @@
 	<link rel="stylesheet" href="css/terminal.css">
 	<link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Source+Sans+Pro" rel="stylesheet">
+	<link rel="stylesheet" href="plugins/node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="js/show-hide-terminal.js"></script>
 	<script src="https://use.fontawesome.com/13a64c4418.js"></script>
+	<script src="plugins/node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
 </head>
 
 <body>
@@ -75,8 +79,9 @@
 			<div id="maximize-button"></div>
 			<div id="terminal-title">Terminal</div>
 		</div>
-		<div class="terminal-content">
-			<form  action="terminal.php" method="post" id="command-form">
+		<div class="terminal-content mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="terminal-history"></div>
+			<form action="terminal.php" method="post" id="command-form">
 				<label for="command">user@dolig.xyz $</label>
 				<input type="text" name="command" id="command" autocomplete="off">
 			</form>

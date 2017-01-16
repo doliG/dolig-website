@@ -55,6 +55,7 @@
     color: white;
     font-family: 'Overpass Mono', monospace;
     font-size: .8em;
+    overflow: scroll;
 }
 
 .terminal-content label {

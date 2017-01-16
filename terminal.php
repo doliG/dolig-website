@@ -3,6 +3,6 @@ if ( !isset($_POST['command']) ) {
     echo "Rien reçu";
 }
 else {
-    echo "Commande reçue : " . $_POST['command'];
+    echo "<div class=\"animated fadeInUp\">Commande reçue : " . $_POST['command'] . "</div><br><br>";
 }
 ?>

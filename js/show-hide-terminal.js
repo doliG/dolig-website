@@ -51,19 +51,21 @@ $(function() {
         e.preventDefault();
         if (!$('#command').val() == '') {
             console.log("Envoie formulaire...");
-            $.ajax({
-                url: $(this).attr('action'),
-                type: $(this).attr('method'),
-                data: $(this).serialize(),
-                success: function(html) {
-                    console.log('sucess');
-                    alert(html);
-                }
+            $.post("terminal.php", $(this).serialize(), function(data) {
+                terminalRefresh(data);
             });
             console.log("Envoie ok.");
         } else {
             // Erreur log.
         }
     });
+
+    function terminalRefresh(data) {
+        console.log('terminalRefresh()');
+        $('.terminal-history').append('<span>user@dolig.xyz $ ' + $('#command').val() + '</span><br>');
+        $('.terminal-history').append(data);
+        $('#command').val('');
+        $('#command').focus();
+    }
 
 });
