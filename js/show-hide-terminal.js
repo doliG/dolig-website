@@ -1,45 +1,69 @@
 $(function() {
-    $('body').keypress(function(e) {
+
+    $('body').keyup(function(e) {
         if (e.keyCode == 32) {
             if (!$('#command').is(':focus')) {
                 e.preventDefault();
-                // console.log('click');
                 if ($('#terminal').hasClass('hidden')) {
                     terminalShow();
-                } else {
-                    terminalHide();
                 }
             }
-        } else if (!$('#command').is(':focus')) {
+        } else if ($("#terminal").hasClass('hidden')) {
             console.log("You should press space.");
         }
-    })
+    });
 
-    $('#command').keyup(function(e) {
+    $('body').keyup(function(e) {
         if (e.keyCode == 27) {
             e.preventDefault();
             terminalHide();
         }
     });
 
+    $('#terminal').bind('onanimationend animationend Wbekitanimatioend', function() {
+        $('#command').focus();
+    });
+
     function terminalShow() {
-        if ($("#terminal").hasClass("animated bounceInUp")) {
-            $("#terminal").removeClass("bounceInUp");
-            $("#terminal").addClass("fadeIn");
+        $('#content').addClass('hidden');
+        if ($('#terminal').hasClass('animated')) {
+            $('#terminal').removeClass('bounceInUp');
         } else {
             $("#terminal").addClass("animated bounceInUp");
         }
         $('#terminal').removeClass('hidden');
-        $('#content').addClass('hidden');
-        $("#terminal").bind('oanimationend animationend webkitAnimationEnd', function() {
-            $("#command").focus();
-        });
-        console.log('Terminal: show');
+        if ($('#terminal').hasClass('animated') && !$('#terminal').hasClass('bounceInUp')) {
+            $('#command').focus();
+        }
+        console.log('terminalShow()');
     }
     function terminalHide() {
         $('#content').removeClass('hidden');
         $('#content').addClass('animated fadeIn')
         $('#terminal').addClass('hidden');
-        console.log('Terminal: hide');
+        console.log('terminalHide()');
     }
+
+    //////////////
+    // Terminal //
+    /////////////
+    $('#command-form').on('submit', function(e) {
+        e.preventDefault();
+        if (!$('#command').val() == '') {
+            console.log("Envoie formulaire...");
+            $.ajax({
+                url: $(this).attr('action'),
+                type: $(this).attr('method'),
+                data: $(this).serialize(),
+                success: function(html) {
+                    console.log('sucess');
+                    alert(html);
+                }
+            });
+            console.log("Envoie ok.");
+        } else {
+            // Erreur log.
+        }
+    });
+
 });

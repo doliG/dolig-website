@@ -1,6 +1,6 @@
 .terminal {
     background-color: white;
-    width: 600px;
+    width: 650px;
     padding: 0px;
     margin: 20px auto;
     border-radius: 5px;
@@ -21,7 +21,7 @@
     margin: 0px;
     padding: 0px;
     text-align: center;
-    width: 470px;
+    width: 510px;
 }
 
 #close-button, #minimize-button, #maximize-button {
@@ -47,16 +47,24 @@
 .terminal-content {
     height: 300px;
     padding: 3px;
+    padding-right: 0px;
     border: 1px solid #C0C0C0;
     border-top: none;
     background-color: black;
     border-radius: 0pc 0px 5px 5px;
     color: white;
     font-family: 'Overpass Mono', monospace;
+    font-size: .8em;
+}
+
+.terminal-content label {
+    padding-left: -30px;
 }
 
 .terminal-content input {
     background-color: black;
+    display: inline-block;
+    width: 508px;
     color: white;
     border: none;
     outline: 0;

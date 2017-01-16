@@ -76,8 +76,10 @@
 			<div id="terminal-title">Terminal</div>
 		</div>
 		<div class="terminal-content">
-			<label for="command">user@dolig.xyz $ </label>
-			<input type="text" name="command" value="" id="command"></input>
+			<form  action="terminal.php" method="post" id="command-form">
+				<label for="command">user@dolig.xyz $</label>
+				<input type="text" name="command" id="command" autocomplete="off">
+			</form>
 		</div>
 	</section>
 
